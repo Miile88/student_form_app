@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
+
+    <!-- Header Section -->
+    <View
+        android:id="@+id/headerBackground"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:background="#1A73E8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Student Form"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:text="Fill in your details"
+        android:textColor="#E0E0E0"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- Form Container -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Your Name Field -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Name"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter your name"
+                    android:inputType="textPersonName"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#BDBDBD" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Select Date Field -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Date"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:endIconDrawable="@drawable/baseline_calendar_month_24"
+                app:endIconMode="custom"
+                app:endIconTint="#9E9E9E"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:hint="Pick a date"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#BDBDBD" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Email Address Field -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email Address"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="your.email@example.com"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="#BDBDBD" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Submit Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_margin="20dp"
+        android:backgroundTint="#1A73E8"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
